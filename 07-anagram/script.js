@@ -9,10 +9,13 @@
 */
 
 function anagram(str1, str2) {
-    // Напишите код здесь
+    const a = str1.toLowerCase().split('').sort().join('');
+    const b = str2.toLowerCase().split('').sort().join('');
+    return (a.length == b.length && a == b && str1.toLowerCase() != str2.toLowerCase() ? true : false);
 }
 
 // Протестируйте решение, вызывая функцию с разными аргументами:
 
 console.log(anagram('finder', 'Friend')); // true
 console.log(anagram('hello', 'bye')); // false
+console.log(anagram('up', 'UP')); // false

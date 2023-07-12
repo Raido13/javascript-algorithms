@@ -13,8 +13,10 @@
  * 
 */
 
-function palindrome(str) {
-    // Напишите код здесь
+function palindrome (str) {
+    if (!str) return true;
+    const arr = str.match(/[a-zA-Za-åa-ö-w-я]/g);
+    return (arr.toString().toLowerCase() == arr.reverse().toString().toLowerCase() ? true : false);
 }
 
 // Протестируйте решение, вызывая функцию с разными аргументами:

@@ -10,13 +10,20 @@
 */
 
 function isPrime(n) {
-    // Напишите код здесь
+    if(n == 0 || n == 1) {return false}
+    if(n == 2) {return true}
+    if(n % 2 == 0) {return false}
+    for(i = 3; i <= n; i = i + 2){
+        if(n % i == 0 && i != n) {return false}
+        if(n % i == 0 && i == n && n % 1 == 0) {return true}
+    }
 }
 
 // Протестируйте решение, вызывая функцию с разными аргументами:
 
 console.log(isPrime(0)); // false
 console.log(isPrime(1)); // false
+console.log(isPrime(2));
 console.log(isPrime(3)); // true
 console.log(isPrime(6)); // false
 console.log(isPrime(17)); // true

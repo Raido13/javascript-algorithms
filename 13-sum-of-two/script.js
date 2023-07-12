@@ -9,10 +9,20 @@
 */
 
 function sumOfTwo(arr, sum) {
-    // Напишите код здесь
+    const arr2 = [];
+    res = false;
+    arr.forEach(item => arr2.push(item));
+    arr.forEach(item => {
+        arr2.forEach(item2 => {
+            if(item + item2 == sum){res = true;}
+        });
+    });
+    return res;
 }
 
 // Протестируйте решение, вызывая функцию с разными аргументами:
 
 console.log(sumOfTwo([1, 2, 3, 4, 5], 4)); // true (так как 1 + 3 === 4)
 console.log(sumOfTwo([1, 2, 3, 4, 5], 100)); // false
+console.log(sumOfTwo([1, -1, 1], 0)); // false
+console.log(sumOfTwo([1, 1, 1], 2)); // false

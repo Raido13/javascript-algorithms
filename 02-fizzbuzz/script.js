@@ -10,10 +10,25 @@
  * 
 */
 
-function fizzBuzz(num) {
-    // Напишите код здесь
+function fizzBuzz(n) {
+    const arr = [];
+    let start = 1;
+    while (start <= n){
+        arr.push(start++);
+    }
+    arr.map(item => {
+       if(item % 3 == 0 && item % 5 != 0){
+        return console.log('fizz');
+       }
+       if(item % 5 == 0 && item % 3 != 0){
+        return console.log('buzz');
+       }
+       if(item % 3 == 0 && item % 5 == 0){
+        return console.log('fizzbuzz');
+       }
+       return console.log(item);
+    });
 }
-
 // Протестируйте решение, вызывая функцию с разными аргументами:
 
-console.log(fizzBuzz(15));
+console.log(fizzBuzz(1500));
