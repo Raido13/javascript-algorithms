@@ -13,14 +13,13 @@ function countZeros(n) {
         arr.push(start++);
     }
     let counter = 0;
-    let zeros = [];
     arr.forEach(item => {
+        const zeros = [];
         let a = item.toString().split('');
         let b = a.map(item => {return parseInt(item)});
-        zeros = b.filter(num => {return num == 0});
+        b.filter(num => {if(num == 0){zeros.push(num)}});
         counter = counter + zeros.length;
     });
-    console.log(arr);
     return counter;
 }
 
